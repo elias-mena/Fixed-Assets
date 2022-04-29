@@ -31,12 +31,12 @@
         <asp:TextBox type="password"
         ID="TextBoxPassword" runat="server" CssClass="form-control" 
         placeholder="Contraseña" required autofocus/>
-          <asp:Button ID="ButtonLogin" runat="server" CssClass="mt-3 btn btn-lg btn-primary btn-block" Text="Ingresar" type="submit"/>
+          <asp:Button ID="ButtonLogin" runat="server" CssClass="mt-3 btn btn-lg btn-primary btn-block" Text="Ingresar" type="submit" OnClick="ButtonLogin_Click"/>
           <button type="button" class="mt-3 btn btn-lg btn-primary btn-block">
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Auth/register.aspx">Registrarse</asp:HyperLink>
         </button>
       </form>
-        
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>"></asp:SqlDataSource>
     </div>
     <!-- /container -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -45,5 +45,6 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+      <asp:Label ID="LabelAlert" runat="server" Text="Label"></asp:Label>
   </body>
 </html>
