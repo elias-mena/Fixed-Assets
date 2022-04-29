@@ -13,5 +13,22 @@ namespace FixedAssets.Auth
         {
             
         }
+
+        protected void ButtonRegister_Click(object sender, EventArgs e)
+        {
+            string username = TextBoxUsername.Text;
+            string name = TextBoxName.Text;
+            string lastname = TextBoxLastName.Text;
+            string id = TextBoxId.Text;
+            string birthdate = TextBoxDate.Text;
+            string email = TextBoxEmail.Text;
+            string password = new Crypt().Encrypt(TextBoxPassword.Text);
+            string cpassword = TextBoxConfirmPassword.Text;
+
+
+            SqlDataSource1.InsertCommand = $"insert into users values ('{id}','{username}','{name}','{lastname}','{email}','{password}','{birthdate}')";
+            SqlDataSource1.Insert();
+            LabelAlert.Text = $"Usuario Agregado!";
+        }
     }
 }

@@ -44,11 +44,21 @@
             <asp:TextBox
                 ID="TextBoxId" runat="server" CssClass="form-control" 
                 placeholder="Cedula" required autofocus/>
-
+            
+            <label for="TextBoxDate" class="sr-only">Fecha de Nacimiento</label>
+              <asp:TextBox
+                ID="TextBoxDate" runat="server" CssClass="form-control" 
+                placeholder="Fecha de Nacimiento" type="date" required autofocus/>
+              
           </div>
 
           <div class="container-fluid">
-
+              
+            <label for="TextBoxFoto" class="sr-only">Foto</label>
+            <asp:TextBox
+                ID="TextBoxFoto" runat="server" CssClass="form-control" 
+                type="file" autofocus/>
+              
             <label for="TextBoxEmail" class="sr-only">Email</label>
             <asp:TextBox
                 ID="TextBoxEmail" runat="server" CssClass="form-control" 
@@ -63,10 +73,7 @@
             <asp:TextBox type="password"
                 ID="TextBoxConfirmPassword" runat="server" CssClass="form-control" 
                 placeholder="Contraseña" required autofocus/>
-
-            <button class="mt-3 btn btn-lg btn-primary btn-block" type="submit">
-              Registrarse
-            </button>
+            <asp:Button ID="ButtonRegister" runat="server" Text="Registrarse" CssClass="mt-3 btn btn-lg btn-primary btn-block" OnClick="ButtonRegister_Click"/>
           </div>
         </div>
       </form>
@@ -78,5 +85,7 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>"></asp:SqlDataSource>
+      <asp:Label ID="LabelAlert" runat="server" Text="Label"></asp:Label>
   </body>
 </html>
