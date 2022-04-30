@@ -14,8 +14,20 @@ namespace FixedAssets.Inventory
 
         }
 
-        protected void ButtonSave_Click(object sender, EventArgs e)
+
+        protected void ButtonSave_Click1(object sender, EventArgs e)
         {
+            int asset = DropDownAsset.SelectedIndex + 1;
+            int department = DropDownDepartment.SelectedIndex + 1;
+            string condition = DropDownCondition.SelectedValue;
+            string date = TextBoxDueDate.Text;
+            string buyer = DropDownBuyer.SelectedValue;
+            int amount = int.Parse(TextBoxAmount.Text);
+            int price = int.Parse(TextBoxUnitPrice.Text);
+
+            SqlDataSource5.InsertCommand = $"insert into asset_inventory (asset, department, condition, due_date, buyer, amount, unit_price) " +
+                $"values ({asset},{department},'{condition}','{date}','{buyer}',{amount},{price})";
+            SqlDataSource5.Insert();
 
         }
     }

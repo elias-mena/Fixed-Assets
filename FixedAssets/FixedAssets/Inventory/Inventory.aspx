@@ -86,13 +86,22 @@
                     <asp:BoundField DataField="Comprador" HeaderText="Comprador" SortExpression="Comprador" />
                     <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
                     <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
+                        <asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" />
                     </Columns>
 
                 
                     
                 </asp:GridView>
 
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>" SelectCommand="select * from inventory"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>" SelectCommand="SELECT * FROM inventory where &quot;Comprador&quot; != 'admin'"></asp:SqlDataSource>
+                <br />
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>" SelectCommand="SELECT id, name FROM assets.&quot;public&quot;.departments"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>" SelectCommand="SELECT id, username, first_name, last_name, email, password, birthdate FROM assets.&quot;public&quot;.users WHERE (username &lt;&gt; 'admin')"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>" SelectCommand="SELECT id, name, description, category FROM assets.&quot;public&quot;.assets"></asp:SqlDataSource>
+
+                <br />
+                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>"></asp:SqlDataSource>
+
             </div>
         </div>
                       <!-- Modal Edit -->
@@ -123,62 +132,54 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     
-                                <label for="TextBoxAsset" class="sr-only">Activo</label>
-                                <asp:TextBox
-                                    ID="TextBoxAsset" runat="server" CssClass="form-control" 
-                                    placeholder="Activo" required />   
+                                <label for="DropDownAsset" class="sr-only">Activo</label>
+                                 <asp:DropDownList ID="DropDownAsset" runat="server" DataSourceID="SqlDataSource4" DataTextField="name" DataValueField="name" CssClass="form-select"></asp:DropDownList>
+  
                                 </li>
                                 
                                 <li class="list-group-item">
-                                    <label for="TextBoxDepartment" class="sr-only">Departamento</label>
-                                    <asp:TextBox
-                                        ID="TextBoxDepartment" runat="server" CssClass="form-control" 
-                                        placeholder="Departamento" required autofocus/>
-                                    
-                                </li>
+                                <label for="DropDownDepartment" class="sr-only">Departamento</label><br />
+                                <asp:DropDownList ID="DropDownDepartment" runat="server" DataSourceID="SqlDataSource2" DataTextField="name" DataValueField="name" CssClass="form-select"></asp:DropDownList>
+
+                                 </li>
+                                
                                 <li class="list-group-item">
-                                    <label for="TextBoxCondition" class="sr-only">Condición</label>
-                                    <asp:TextBox
-                                        ID="TextBoxCondition" runat="server" CssClass="form-control" 
-                                        placeholder="Condición" required autofocus/>
-                                </li>
+                                <label for="DropDownCondition" class="sr-only">Condición</label><br />
+                                    <asp:DropDownList ID="DropDownCondition" runat="server" CssClass="form-select">
+                                            <asp:ListItem>Nuevo</asp:ListItem>
+                                            <asp:ListItem>Usado</asp:ListItem>
+                                        </asp:DropDownList>
+                                 </li>
             
                                 <li class="list-group-item">
-                                    <label for="TextBoxPurchase_date" class="sr-only">Fecha Compra</label>
+                                    <label for="TextBoxDueDate" class="sr-only">Fecha Vencimiento</label>
                                     <asp:TextBox
-                                        ID="TextBoxPurchase_date" runat="server" CssClass="form-control" 
-                                        placeholder="Fecha Compra" type="date" required autofocus/>                                    
-                                </li>
-            
-                                <li class="list-group-item">
-                                    <label for="TextBoxDue_date" class="sr-only">Fecha Vencimiento</label>
-                                    <asp:TextBox
-                                        ID="TextBoxDue_date" runat="server" CssClass="form-control" 
+                                        ID="TextBoxDueDate" runat="server" CssClass="form-control" 
                                         placeholder="Fecha Vencimiento" type="date" required autofocus/>
                                 </li>
-
+                                
                                 <li class="list-group-item">
-                                    <label for="TextBoxBuyer" class="sr-only">Comprador</label>
-                                    <asp:TextBox
-                                        ID="TextBoxBuyer" runat="server" CssClass="form-control" 
-                                        placeholder="Comprador"  required autofocus/>
-                                </li>
+                                <label for="DropDownBuyer" class="sr-only">Comprador</label><br />
+                                <asp:DropDownList ID="DropDownBuyer" runat="server" DataSourceID="SqlDataSource3" DataTextField="username" DataValueField="username" CssClass="form-select"></asp:DropDownList>
+
+                                 </li>
+                                
                                 <li class="list-group-item">
                                     <label for="TextBoxAmount" class="sr-only">Cantidad</label>
                                     <asp:TextBox 
-                                        ID="TextBoxTextBoxAmount" runat="server" CssClass="form-control" 
+                                        ID="TextBoxAmount" runat="server" CssClass="form-control" type="number"
                                         placeholder="Cantidad" required autofocus/>
                                 </li>
                                 <li class="list-group-item">
-                                    <label for="TextBoxUnit_price" class="sr-only">Precio Unidad</label>
+                                    <label for="TextBoxUnitPrice" class="sr-only">Precio Unidad</label>
                                     <asp:TextBox 
-                                        ID="TextBoxUnit_price" runat="server" CssClass="form-control" 
+                                        ID="TextBoxUnitPrice" runat="server" CssClass="form-control" type="number"
                                         placeholder="Precio Unidad" required autofocus/>
                                 </li>
                             </ul>
                             </div>
                             <div class="modal-footer">
-                                <asp:Button ID="ButtonSave" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="ButtonSave_Click"/>
+                                <asp:Button ID="ButtonSave" runat="server" Text="Guardar" CssClass="btn btn-primary" OnClick="ButtonSave_Click1"/>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                 Cerrar
                             </button>
@@ -202,21 +203,10 @@
         </ul>
       </footer>
     </div>
+                                        
+
     </form>
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p class="col-md-4 mb-0 text-muted">© 2021 Company, Inc</p>
 
-        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-
-        <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Ayuda</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Consultas</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Acerca de la App</a></li>
-        </ul>
-      </footer>    
         <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

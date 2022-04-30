@@ -73,7 +73,11 @@
             <asp:TextBox type="password"
                 ID="TextBoxConfirmPassword" runat="server" CssClass="form-control" 
                 placeholder="Contraseña" required autofocus/>
-            <asp:Button ID="ButtonRegister" runat="server" Text="Registrarse" CssClass="mt-3 btn btn-lg btn-primary btn-block" OnClick="ButtonRegister_Click"/>
+            <asp:Button ID="ButtonRegister" runat="server" Text="Registrarse" CssClass="mt-3 btn  btn-primary btn-block" OnClick="ButtonRegister_Click"/>
+            <button type="button" class="btn btn-secondary mt-3">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Auth/Login.aspx">Volver</asp:HyperLink>
+ 
+                </button>
           </div>
         </div>
       </form>
