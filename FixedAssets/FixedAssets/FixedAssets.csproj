@@ -70,10 +70,15 @@
     <Content Include="Admin\Admin.aspx" />
     <Content Include="Admin\DeleteUser.aspx" />
     <Content Include="Admin\EditUser.aspx" />
+    <Content Include="Assets\Assets.aspx" />
+    <Content Include="Assets\DeleteAsset.aspx" />
+    <Content Include="Assets\EditAsset.aspx" />
     <Content Include="Auth\Register.aspx" />
     <Content Include="Content\Styles.css" />
+    <Content Include="Images\Logo.png" />
     <Content Include="index.aspx" />
     <Content Include="Auth\Login.aspx" />
+    <Content Include="Inventory\Inventory.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +103,27 @@
     <Compile Include="Admin\EditUser.aspx.designer.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Assets\Assets.aspx.cs">
+      <DependentUpon>Assets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assets\Assets.aspx.designer.cs">
+      <DependentUpon>Assets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\DeleteAsset.aspx.cs">
+      <DependentUpon>DeleteAsset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assets\DeleteAsset.aspx.designer.cs">
+      <DependentUpon>DeleteAsset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\EditAsset.aspx.cs">
+      <DependentUpon>EditAsset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assets\EditAsset.aspx.designer.cs">
+      <DependentUpon>EditAsset.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Auth\Crypt.cs" />
     <Compile Include="Auth\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -120,6 +146,13 @@
     <Compile Include="Auth\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\Inventory.aspx.cs">
+      <DependentUpon>Inventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\Inventory.aspx.designer.cs">
+      <DependentUpon>Inventory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,7 +165,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
     <Folder Include="Departments\" />
   </ItemGroup>
   <PropertyGroup>
