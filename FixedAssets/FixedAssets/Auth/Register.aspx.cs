@@ -29,6 +29,7 @@ namespace FixedAssets.Auth
             SqlDataSource1.InsertCommand = $"insert into users values ('{id}','{username}','{name}','{lastname}','{email}','{password}','{birthdate}')";
             SqlDataSource1.Insert();
             LabelAlert.Text = $"Usuario Agregado!";
+            Server.Transfer("~/Inventory/Inventory.aspx", true);
         }
     }
 }

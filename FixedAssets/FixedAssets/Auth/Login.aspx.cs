@@ -32,7 +32,7 @@ namespace FixedAssets
                     if(username=="admin")
                         Server.Transfer("~/Admin/Admin.aspx", true);
                     else
-                        LabelAlert.Text = "Bienvenido!";
+                        Server.Transfer("~/Inventory/Inventory.aspx", true);
                 }
                 else
                     LabelAlert.Text = "La clave es incorrecta";
