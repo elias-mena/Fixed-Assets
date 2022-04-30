@@ -30,6 +30,7 @@ namespace FixedAssets.Departmentss
 
         protected void ButtonSearch_Click(object sender, EventArgs e)
         {
+            Label1.Text = "";
             SqlDataSource1.SelectCommand = $"select * from departments where id='{TextBoxId.Text}'";
             SqlDataSource1.DataSourceMode = SqlDataSourceMode.DataReader;
             OdbcDataReader datos = (OdbcDataReader)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
