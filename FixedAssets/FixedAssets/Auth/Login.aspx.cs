@@ -29,7 +29,10 @@ namespace FixedAssets
             {
                 if (new Crypt().Encrypt(password) == (string)datos["password"])
                 {
-                    LabelAlert.Text = "Bienvenido!";
+                    if(username=="admin")
+                        Server.Transfer("~/Admin/Admin.aspx", true);
+                    else
+                        LabelAlert.Text = "Bienvenido!";
                 }
                 else
                     LabelAlert.Text = "La clave es incorrecta";

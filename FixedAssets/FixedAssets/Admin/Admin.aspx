@@ -16,7 +16,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="../Content/styles.css">
+    <link rel="stylesheet" href="../Content/styles.css"/>
     <title>Admin</title>
 </head>
 <body>
@@ -91,12 +91,12 @@
             <div class="container-fluid">
                 <asp:GridView ID="GridViewUsers" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" CssClass="table table-bordered table-hover table-dark table-striped">
                     <Columns>
-                    <asp:BoundField DataField="id" HeaderText="id" ReadOnly="True" SortExpression="id" />
-                    <asp:BoundField DataField="username" HeaderText="username" SortExpression="username" />
-                    <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
-                    <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
-                    <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-                    <asp:BoundField DataField="birthdate" HeaderText="birthdate" SortExpression="birthdate" />
+                    <asp:BoundField DataField="id" HeaderText="Cedula" ReadOnly="True" SortExpression="id" />
+                    <asp:BoundField DataField="username" HeaderText="Nombre de Usuario" SortExpression="username" />
+                    <asp:BoundField DataField="first_name" HeaderText="Nombre" SortExpression="first_name" />
+                    <asp:BoundField DataField="last_name" HeaderText="Apellido" SortExpression="last_name" />
+                    <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email" />
+                    <asp:BoundField DataField="birthdate" HeaderText="Fecha de Nacimiento" SortExpression="birthdate" />
                     </Columns>
 
                 

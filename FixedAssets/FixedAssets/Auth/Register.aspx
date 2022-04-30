@@ -30,7 +30,7 @@
                 ID="TextBoxUsername" runat="server" CssClass="form-control" 
                 placeholder="Nombre de Usuario" required autofocus/>
 
-            <label for="TextBoxName" class="sr-only">Nombre Completo</label>
+            <label for="TextBoxName" class="sr-only">Nombre</label>
             <asp:TextBox
                 ID="TextBoxName" runat="server" CssClass="form-control" 
                 placeholder="Nombre Completo" required autofocus/>
