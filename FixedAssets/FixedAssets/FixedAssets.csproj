@@ -67,7 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Auth\AdminUsers.aspx" />
+    <Content Include="Admin\Admin.aspx" />
+    <Content Include="Admin\Delete User.aspx" />
+    <Content Include="Admin\EditUser.aspx" />
+    <Content Include="Auth\Admin.aspx" />
     <Content Include="Auth\Register.aspx" />
     <Content Include="Content\Styles.css" />
     <Content Include="index.aspx" />
@@ -75,12 +78,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auth\AdminUsers.aspx.cs">
-      <DependentUpon>AdminUsers.aspx</DependentUpon>
+    <Compile Include="Admin\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Auth\AdminUsers.aspx.designer.cs">
-      <DependentUpon>AdminUsers.aspx</DependentUpon>
+    <Compile Include="Admin\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Delete User.aspx.cs">
+      <DependentUpon>Delete User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Delete User.aspx.designer.cs">
+      <DependentUpon>Delete User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Auth\Crypt.cs" />
     <Compile Include="Auth\Register.aspx.cs">
@@ -116,6 +140,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets\" />
     <Folder Include="Departments\" />
   </ItemGroup>
   <PropertyGroup>
