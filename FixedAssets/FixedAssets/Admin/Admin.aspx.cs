@@ -29,14 +29,5 @@ namespace FixedAssets.Admin
             SqlDataSource1.Insert();
         }
 
-        protected void ButtonDelete_Click(object sender, EventArgs e)
-        {
-            Server.Transfer("~/Admin/Delete.aspx", true);
-        }
-
-        protected void ButtonEdit_Click(object sender, EventArgs e)
-        {
-            Server.Transfer("~/Admin/EditUser.aspx", true);
-        }
     }
 }

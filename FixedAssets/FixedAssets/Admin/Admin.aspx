@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
+    <link rel="stylesheet" href="../Content/styles.css">
     <title>Admin</title>
 </head>
 <body>
@@ -76,8 +77,15 @@
           </svg>
           Agregar Usuario
         </button>
-        <asp:Button ID="ButtonEdit" runat="server" Text="Editar Usuario" CssClass="btn btn-primary m-3" OnClick="ButtonEdit_Click"/>
-        <asp:Button ID="ButtonDelete" runat="server" Text="Eliminar Usuario" CssClass="btn btn-danger m-3" OnClick="ButtonDelete_Click"/>
+
+        <button type="button" class="btn btn-primary m-3">
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/EditUser.aspx">Editar Usuario</asp:HyperLink>
+        </button>
+
+        <button type="button" class="btn btn-danger m-3">
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/DeleteUser.aspx">Eliminar Usuario</asp:HyperLink>
+        </button>
+
       </div>
       <br/>
             <div class="container-fluid">
@@ -88,14 +96,14 @@
                     <asp:BoundField DataField="first_name" HeaderText="first_name" SortExpression="first_name" />
                     <asp:BoundField DataField="last_name" HeaderText="last_name" SortExpression="last_name" />
                     <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
-                    <asp:BoundField DataField="birth_date" HeaderText="birth_date" SortExpression="birth_date" />
+                    <asp:BoundField DataField="birthdate" HeaderText="birthdate" SortExpression="birthdate" />
                     </Columns>
 
                 
                     
                 </asp:GridView>
 
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>" SelectCommand="SELECT id, username, first_name, last_name, email,birth_date from users"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>" SelectCommand="SELECT id, username, first_name, last_name, email, birthdate FROM assets.&quot;public&quot;.users"></asp:SqlDataSource>
             </div>
         </div>
                       <!-- Modal Edit -->

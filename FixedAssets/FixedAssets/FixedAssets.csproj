@@ -68,9 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Admin.aspx" />
-    <Content Include="Admin\Delete User.aspx" />
+    <Content Include="Admin\DeleteUser.aspx" />
     <Content Include="Admin\EditUser.aspx" />
-    <Content Include="Auth\Admin.aspx" />
     <Content Include="Auth\Register.aspx" />
     <Content Include="Content\Styles.css" />
     <Content Include="index.aspx" />
@@ -85,12 +84,12 @@
     <Compile Include="Admin\Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Delete User.aspx.cs">
-      <DependentUpon>Delete User.aspx</DependentUpon>
+    <Compile Include="Admin\DeleteUser.aspx.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Delete User.aspx.designer.cs">
-      <DependentUpon>Delete User.aspx</DependentUpon>
+    <Compile Include="Admin\DeleteUser.aspx.designer.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\EditUser.aspx.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
@@ -98,13 +97,6 @@
     </Compile>
     <Compile Include="Admin\EditUser.aspx.designer.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Auth\Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Auth\Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Auth\Crypt.cs" />
     <Compile Include="Auth\Register.aspx.cs">
