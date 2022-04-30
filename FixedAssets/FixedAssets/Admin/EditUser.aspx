@@ -20,40 +20,26 @@
     <title>Admin</title>
 </head>
 <body>
-    <header class="p-3 mb-3 nav bg-dark ">
-    <div class="container-fluid d-flex flex-row justify-content-between">
-        <a class="navbar-brand link-light" href="#">Activos fijos </a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../Images/Logo.png" alt="Logo" width="90" height="50" class="d-inline-block align-text-top"/>
+          Save Assets
+        </a>
 
-            <div class="d-flex dropdown">
-              <a
-                href="#"
-                class="d-block link-dark dropdown-toggle"
-                id="dropdownUser1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i class="bi bi-list text-white" style="font-size: 30px"></i>
-              </a>
-              <ul
-                class="dropdown-menu text-small"
-                aria-labelledby="dropdownUser1"
-                style=""
-              >
-                        <li><a class="dropdown-item" href="">Administrar Usuarios</a></li>
-                        <li><a class="dropdown-item" href="">Activos</a></li>
-                        <li><a class="dropdown-item" href="">Departamentos</a></li>
-                        <li><a class="dropdown-item" href="">Inventario</a></li>
-                        <li><a class="dropdown-item" href="">Perfil</a></li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="">Cerrar Sesión</a></li>
-
-
-
-                    </ul>
-                </div>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="~/Departmentss/Departments.aspx">Departamentos</a>
+            <a class="nav-link active" href="~/Assets/Assets.aspx">Activos</a>
+            <a class="nav-link active" href="~/Inventory/Inventory.aspx">Inventario</a>
+          </div>
+        </div>
       </div>
-</header>
+    </nav>
     <form id="form1" runat="server">
         <div class="container-fluid">
                     

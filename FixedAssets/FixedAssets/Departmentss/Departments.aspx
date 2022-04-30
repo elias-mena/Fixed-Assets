@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="FixedAssets.Admin.Admin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Departments.aspx.cs" Inherits="FixedAssets.Departmentss.Departments" %>
 
 <!DOCTYPE html>
 
@@ -17,7 +17,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../Content/styles.css"/>
-    <title>Admin</title>
+    <title>Departments</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -42,7 +42,7 @@
     </nav>
     <form id="form1" runat="server">
         <div>
-            <h2 class="m-3">Usuarios</h2>
+            <h2 class="m-3">Departamentos</h2>
         <div class="container-fluid d-flex justify-content-end">
                    
         <button type="button" class="btn btn-success m-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -61,35 +61,33 @@
               d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"
             ></path>
           </svg>
-          Agregar Usuario
+          Agregar Departamento
         </button>
 
         <button type="button" class="btn btn-primary m-3">
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/EditUser.aspx">Editar Usuario</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Departments/EditDepartment.aspx">Editar Departamento</asp:HyperLink>
         </button>
 
         <button type="button" class="btn btn-danger m-3">
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Admin/DeleteUser.aspx">Eliminar Usuario</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Departments/DeleteDepartment.aspx">Eliminar Departamento</asp:HyperLink>
         </button>
 
       </div>
       <br/>
             <div class="container-fluid">
-                <asp:GridView ID="GridViewUsers" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" CssClass="table table-bordered table-hover table-dark table-striped">
+                <asp:GridView ID="GridViewDepartments" runat="server" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="SqlDataSource1" CssClass="table table-bordered table-hover table-dark table-striped">
                     <Columns>
-                    <asp:BoundField DataField="id" HeaderText="Cedula" ReadOnly="True" SortExpression="id" />
-                    <asp:BoundField DataField="username" HeaderText="Nombre de Usuario" SortExpression="username" />
-                    <asp:BoundField DataField="first_name" HeaderText="Nombre" SortExpression="first_name" />
-                    <asp:BoundField DataField="last_name" HeaderText="Apellido" SortExpression="last_name" />
-                    <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email" />
-                    <asp:BoundField DataField="birthdate" HeaderText="Fecha de Nacimiento" SortExpression="birthdate" />
+                    <asp:BoundField DataField="id" HeaderText="Id" ReadOnly="True" SortExpression="id" InsertVisible="False" />
+                    <asp:BoundField DataField="name" HeaderText="Nombre" SortExpression="name" />
+                    <asp:BoundField DataField="description" HeaderText="Descripción" SortExpression="description" />
                     </Columns>
 
                 
                     
                 </asp:GridView>
 
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>" SelectCommand="SELECT id, username, first_name, last_name, email, birthdate FROM assets.&quot;public&quot;.users"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PostgresConnectionString %>" ProviderName="<%$ ConnectionStrings:PostgresConnectionString.ProviderName %>" SelectCommand="SELECT id, name, description FROM assets.&quot;public&quot;.departments"></asp:SqlDataSource>
+
             </div>
         </div>
                       <!-- Modal Edit -->
@@ -107,7 +105,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                             <h5 class="modal-title" id="staticBackdropLabel">
-                                Información del Usuario: 
+                                Información del Departamento: 
                             </h5>
                             <button
                                 type="button"
@@ -118,57 +116,22 @@
                             </div>
                             <div class="modal-body d-flex">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    
-                                <label for="TextBoxUsername" class="sr-only">Nombre de Usuario</label>
-                                <asp:TextBox
-                                    ID="TextBoxUsername" runat="server" CssClass="form-control" 
-                                    placeholder="Nombre de Usuario" required />   
-                                </li>
+                                <li class="list-group-item">    
                                 
-                                <li class="list-group-item">
-                                    <label for="TextBoxName" class="sr-only">Nombre Completo</label>
-                                    <asp:TextBox
-                                        ID="TextBoxName" runat="server" CssClass="form-control" 
-                                        placeholder="Nombre Completo" required autofocus/>
-                                    
-                                </li>
-                                <li class="list-group-item">
-                                    <label for="TextBoxLastName" class="sr-only">Apellidos</label>
-                                    <asp:TextBox
-                                        ID="TextBoxLastName" runat="server" CssClass="form-control" 
-                                        placeholder="Apellidos" required autofocus/>
-                                </li>
-            
-                                <li class="list-group-item">
-                                    <label for="TextBoxId" class="sr-only">Cedula</label>
-                                    <asp:TextBox
-                                        ID="TextBoxId" runat="server" CssClass="form-control" 
-                                        placeholder="Cedula" required autofocus/>                                    
-                                </li>
-            
-                                <li class="list-group-item">
-                                    <label for="TextBoxDate" class="sr-only">Fecha de Nacimiento</label>
-                                    <asp:TextBox
-                                        ID="TextBoxDate" runat="server" CssClass="form-control" 
-                                        placeholder="Fecha de Nacimiento" type="date" required autofocus/>
+                                <li class="list-group-item">    
+                                <label for="TextBoxName" class="sr-only">Nombre</label>
+                                <asp:TextBox
+                                    ID="TextBoxName" runat="server" CssClass="form-control" 
+                                    placeholder="Nombre" required />   
                                 </li>
 
-                                <li class="list-group-item">
-                                    <label for="TextBoxEmail" class="sr-only">Email</label>
-                                    <asp:TextBox
-                                        ID="TextBoxEmail" runat="server" CssClass="form-control" 
-                                        placeholder="Email" type="email" required autofocus/>
-                                </li>
-                                <li class="list-group-item">
-                                    <label for="TextBoxPassword" class="sr-only">Contraseña</label>
-                                    <asp:TextBox type="password"
-                                        ID="TextBoxPassword" runat="server" CssClass="form-control" 
-                                        placeholder="Contraseña" required autofocus/>
-                                </li>
-                                <li class="list-group-item">Foto: <asp:TextBox
-                                    ID="TextBoxFoto" runat="server" CssClass="form-control" 
-                                    type="file"/></li>
+                                <li class="list-group-item">    
+                                    <label for="TextBoxDescription" class="sr-only">Descripción</label>
+                                    <asp:TextBox ID="TextBoxDescription" runat="server" runat="server" CssClass="form-control" 
+                                        placeholder="Descripción" required></asp:TextBox>
+                                    
+                                    </li>                                        
+                                        
                             </ul>
                             </div>
                             <div class="modal-footer">
@@ -204,4 +167,3 @@
     ></script>    
 </body>
 </html>
-

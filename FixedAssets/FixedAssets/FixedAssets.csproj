@@ -75,6 +75,9 @@
     <Content Include="Assets\EditAsset.aspx" />
     <Content Include="Auth\Register.aspx" />
     <Content Include="Content\Styles.css" />
+    <Content Include="Departmentss\DeleteDepartment.aspx" />
+    <Content Include="Departmentss\Departments.aspx" />
+    <Content Include="Departmentss\EditDepartment.aspx" />
     <Content Include="Images\Logo.png" />
     <Content Include="index.aspx" />
     <Content Include="Auth\Login.aspx" />
@@ -132,6 +135,27 @@
     <Compile Include="Auth\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Departmentss\DeleteDepartment.aspx.cs">
+      <DependentUpon>DeleteDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Departmentss\DeleteDepartment.aspx.designer.cs">
+      <DependentUpon>DeleteDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Departmentss\Departments.aspx.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Departmentss\Departments.aspx.designer.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Departmentss\EditDepartment.aspx.cs">
+      <DependentUpon>EditDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Departmentss\EditDepartment.aspx.designer.cs">
+      <DependentUpon>EditDepartment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,9 +188,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Departments\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
